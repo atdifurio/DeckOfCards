@@ -22,6 +22,10 @@ def test_deck_str(deck_of_cards):
     cmp_str = 'Deck with 52 cards'
     assert str(deck_of_cards) == cmp_str
 
+def test_deck_shuffling(deck_of_cards):
+    orig_deck = list(deck_of_cards._deck)
+    deck_of_cards.shuffle()
+    assert orig_deck != deck_of_cards._deck
 
 def test_deck_repr(deck_of_cards):
     cmp_str = '<Deck of 52 cards and self._deck = [<Card with suit: 0, rank: 1>, <Card with suit: 1, rank: 1>, <Card with suit: 2, rank: 1>, <Card with suit: 3, rank: 1>, <Card with suit: 0, rank: 2>, <Card with suit: 1, rank: 2>, <Card with suit: 2, rank: 2>, <Card with suit: 3, rank: 2>, <Card with suit: 0, rank: 3>, <Card with suit: 1, rank: 3>, <Card with suit: 2, rank: 3>, <Card with suit: 3, rank: 3>, <Card with suit: 0, rank: 4>, <Card with suit: 1, rank: 4>, <Card with suit: 2, rank: 4>, <Card with suit: 3, rank: 4>, <Card with suit: 0, rank: 5>, <Card with suit: 1, rank: 5>, <Card with suit: 2, rank: 5>, <Card with suit: 3, rank: 5>, <Card with suit: 0, rank: 6>, <Card with suit: 1, rank: 6>, <Card with suit: 2, rank: 6>, <Card with suit: 3, rank: 6>, <Card with suit: 0, rank: 7>, <Card with suit: 1, rank: 7>, <Card with suit: 2, rank: 7>, <Card with suit: 3, rank: 7>, <Card with suit: 0, rank: 8>, <Card with suit: 1, rank: 8>, <Card with suit: 2, rank: 8>, <Card with suit: 3, rank: 8>, <Card with suit: 0, rank: 9>, <Card with suit: 1, rank: 9>, <Card with suit: 2, rank: 9>, <Card with suit: 3, rank: 9>, <Card with suit: 0, rank: 10>, <Card with suit: 1, rank: 10>, <Card with suit: 2, rank: 10>, <Card with suit: 3, rank: 10>, <Card with suit: 0, rank: 11>, <Card with suit: 1, rank: 11>, <Card with suit: 2, rank: 11>, <Card with suit: 3, rank: 11>, <Card with suit: 0, rank: 12>, <Card with suit: 1, rank: 12>, <Card with suit: 2, rank: 12>, <Card with suit: 3, rank: 12>, <Card with suit: 0, rank: 13>, <Card with suit: 1, rank: 13>, <Card with suit: 2, rank: 13>, <Card with suit: 3, rank: 13>]>'
