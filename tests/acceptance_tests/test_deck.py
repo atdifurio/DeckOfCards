@@ -1,8 +1,7 @@
 from pytest_bdd import given, scenario, then, when
+from pytest_bdd.parsers import cfparse
 
 import pytest
-
-from pytest_bdd.parsers import cfparse
 
 from deck_of_cards.deck import Deck
 
@@ -92,7 +91,7 @@ def got_deck():
     cfparse("the deck should have {count:Number} cards", extra_types=dict(Number=int))
 )
 def check_card_count(count, deck_of_cards):
-    assert len(deck_of_cards) == LEGAL_DECK_PARAMETERS["length"]
+    assert len(deck_of_cards) == count
 
 
 @then(
@@ -144,4 +143,4 @@ def check_delt_cards(count, deal_cards):
 @then(cfparse("the next card I deal should be None"))
 def check_next_card_is_none(deck_of_cards):
     next_card = deck_of_cards.deal_card()
-    assert next_card == None
+    assert next_card is None

@@ -2,13 +2,14 @@
 
 """@package deck_of_cards.card
 
-@brief Card class 
+@brief Card class
 """
-
-from uuid import uuid4
 
 
 class Card:
+    """Card class with rank, suit, rank_name, suit_name, and suit_color
+    """
+
     SUITS = ["hearts", "diamonds", "spades", "clubs"]
     RANKS = [
         None,
