@@ -11,8 +11,7 @@ from deck_of_cards.logger import logger
 
 
 class Deck:
-    """ Deck class with shuffle() and deal_card()
-    """
+    """ Deck class with shuffle() and deal_card()"""
 
     def __init__(self, deck: List[Card] = None, logging=logger):
         self.logging = logging
