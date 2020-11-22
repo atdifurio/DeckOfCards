@@ -1,0 +1,21 @@
+(venv) atdifurio:deck_of_cards AndrewDiFurio$ pytest --cov-report term-missing --cov=deck_of_cards .
+============================= test session starts ==============================
+platform darwin -- Python 3.7.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1
+rootdir: /Users/AndrewDiFurio/Documents/deck_of_cards
+plugins: bdd-4.0.1, cov-2.10.1, repeat-0.9.1
+collected 19 items                                                             
+
+tests/unit_tests/unit_test.py .........                                  [ 47%]
+tests/acceptance_tests/test_deck.py ..........                           [100%]
+
+---------- coverage: platform darwin, python 3.7.0-final-0 -----------
+Name                          Stmts   Miss  Cover   Missing
+-----------------------------------------------------------
+src/deck_of_cards/card.py        28      0   100%
+src/deck_of_cards/deck.py        41      0   100%
+src/deck_of_cards/logger.py      16      0   100%
+-----------------------------------------------------------
+TOTAL                            85      0   100%
+
+
+============================== 19 passed in 0.26s ==============================
