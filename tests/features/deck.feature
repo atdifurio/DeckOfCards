@@ -54,3 +54,9 @@ Scenario: Deal 3 cards from a shuffled deck
   And I shuffle the deck
   When I deal 3 cards
   Then the deck should have 49 cards
+
+Scenario: Deal 52 cards and shuffle the deck
+  Given a deck of cards
+  When I deal 52 cards
+  And I shuffle the deck
+  Then the deck should have 0 cards
