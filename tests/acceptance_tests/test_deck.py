@@ -64,6 +64,11 @@ def test_dealing_from_empty_deck_returns_none():
     pass
 
 
+@scenario("../features/deck.feature", "Deal 52 cards and shuffle the deck")
+def test_dealing52_cards_then_shuffling():
+    pass
+
+
 @pytest.fixture
 @given("a deck of cards")
 def deck_of_cards():
@@ -80,6 +85,11 @@ def shuffle_the_deck(deck_of_cards):
 def deal_cards(count, deck_of_cards):
     delt = [deck_of_cards.deal_card() for i in range(count)]
     return delt
+
+
+@when("I shuffle the deck")
+def shuffle_the_deck(deck_of_cards):
+    deck_of_cards.shuffle()
 
 
 @then("I should have a deck")

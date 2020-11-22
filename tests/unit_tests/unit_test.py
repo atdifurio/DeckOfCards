@@ -30,8 +30,50 @@ def test_deck_str(deck_of_cards):
 
 def test_deck_shuffling(deck_of_cards):
     orig_deck = list(deck_of_cards._deck)
+    # If I shuffle 100 times at least 1 time should be different
+    checker = False
+    for i in range(100):
+        deck_of_cards.shuffle()
+        if orig_deck != deck_of_cards._deck:
+            checker = True
+    assert checker
+
+
+def test_shuffling_a_deck_with_two_cards(deck_of_cards):
+    for i in range(len(deck_of_cards) - 2):
+        deck_of_cards.deal_card()
+    assert len(deck_of_cards) == 2
+    orig_deck = list(deck_of_cards._deck)
+    # If I shuffle 100 times at least 1 time should be different
+    checker = False
+    for i in range(100):
+        deck_of_cards.shuffle()
+        if orig_deck != deck_of_cards._deck:
+            checker = True
+    assert checker
+
+
+def test_shuffling_a_deck_with_one_cards(deck_of_cards):
+    for i in range(len(deck_of_cards) - 1):
+        deck_of_cards.deal_card()
+    assert len(deck_of_cards) == 1
+    orig_deck = list(deck_of_cards._deck)
+    # If I shuffle 100 times at least no times should be different
+    checker = True
+    for i in range(100):
+        deck_of_cards.shuffle()
+        if orig_deck != deck_of_cards._deck:
+            checker = False
+    assert checker
+
+
+def test_shuffling_a_deck_with_no_cards(deck_of_cards):
+    for i in range(len(deck_of_cards)):
+        deck_of_cards.deal_card()
+    assert len(deck_of_cards) == 0
+    orig_deck = list(deck_of_cards._deck)
     deck_of_cards.shuffle()
-    assert orig_deck != deck_of_cards._deck
+    assert orig_deck == deck_of_cards._deck
 
 
 def test_deck_repr(deck_of_cards):
