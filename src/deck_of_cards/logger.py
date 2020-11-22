@@ -6,8 +6,7 @@ Set $DECK_LOG_LEVEL to control log level.
 """
 
 LOG_LEVEL = os.getenv("DECK_LOG_LEVEL")
-if LOG_LEVEL:
-    LOG_LEVEL.upper()
+
 if not LOG_LEVEL or LOG_LEVEL == "":
     LOG_LEVEL=logging.INFO
     
