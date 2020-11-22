@@ -1,4 +1,6 @@
-"""Basic logging module that will probably be replaced my the user of Deck.
+"""@package deck_of_cards.deck
+
+@brief Basic logging module that will probably be replaced my the user of Deck.
 Set $DECK_LOG_LEVEL to control log level.
 """
 

@@ -1,5 +1,3 @@
-#!/usr/local/bin
-
 """@package deck_of_cards.card
 
 @brief Card class
