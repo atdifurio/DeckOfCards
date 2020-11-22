@@ -2,7 +2,7 @@
 
 Delivered as a python package. 
 
-Install with "pip install -e ."
+Install with `pip install -e .`
 
 [Optional] set log level by setting environment variable `DECK_LOG_LEVEL`. Can INFO or DEBUG.
 
