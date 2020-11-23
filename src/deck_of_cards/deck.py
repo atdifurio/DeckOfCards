@@ -76,9 +76,9 @@ class Deck:
         """Deals a card from the top of the deck (end of list)
         """
         self.logging.info(f"Dealing card from deck")
-        if not self._deck:
-            return None
-        # pop from end to keep consistent with iter
-        delt = self._deck.pop()
+        delt = None
+        if self._deck:
+            # pop from end to keep consistent with iter
+            delt = self._deck.pop()
         self.logging.debug(f"Dealt {str(delt)} from deck")
         return delt
