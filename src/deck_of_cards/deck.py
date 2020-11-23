@@ -11,7 +11,7 @@ from deck_of_cards.logger import logger
 
 
 class Deck:
-    """ Deck class with shuffle() and deal_card()"""
+    """Deck class with shuffle() and deal_card()"""
 
     def __init__(self, deck: List[Card] = None, logging=logger):
         self.logging = logging
@@ -52,8 +52,7 @@ class Deck:
 
     @classmethod
     def _create_deck(cls) -> List[Card]:
-        """Helper function to initialize Cards in a deck
-        """
+        """Helper function to initialize Cards in a deck"""
         return [
             Card(rank=rank, suit=suit) for rank in range(1, 14) for suit in range(0, 4)
         ]
@@ -73,8 +72,7 @@ class Deck:
         self.logging.debug(f"Deck after shuffle: {self._deck}")
 
     def deal_card(self) -> Optional[Card]:
-        """Deals a card from the top of the deck (end of list)
-        """
+        """Deals a card from the top of the deck (end of list)"""
         self.logging.info(f"Dealing card from deck")
         delt = None
         if self._deck:
