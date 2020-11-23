@@ -9,13 +9,13 @@ Install with `pip install -e .`
 Package has been tested with pytest-bdd for acceptance testing and pytest base for unit testing. Results stored in `tests/`. Install `tests/requirements.txt` to run tests.
 To generate coverage report `pytest --cov-report term-missing --cov=deck_of_cards .`
 
-- Requirement: `shuffle()`
+- Requirement: `shuffle()`  
 Fisher-Yates shuffle algorithm was used here, which takes O(N) time complexity and is performed in place so no additional memory usage. 
-- Requirement: `deal_card()`
+- Requirement: `deal_card()`  
 Deals a card from the end of the list and allows iterating through the deck while dealing avoiding the modify a list while iterating problem that results in skipped items. 
-- Deck is poker-style legal
+- Deck is poker-style legal.  
 Deck is tested to always initialize a legal deck and after shuffling. 
-- Requirement: "Production environment with a lot of usage"
+- Requirement: "Production environment with a lot of usage"  
 Cards was designed to take up as little memory as possible. Besides those inherited from Object, 2 instance variables are kept in memory, both ints that can be resolved into their associated strings on demand. `SUITS` and `RANKS` are stored as lists as a static variable and accessed by index for O(1) time. This saves memory because, storing rank as 7 instead of "Seven" takes up half the memory and the cost is passed to the access time for the name attributes. Also, assuming `"Seven"` was chosen over `7` as the rank instance var, the dealer would have to waste compute time converting the string for comparison purposes and storing both would take more more memory. 
 
 No Database? Why?
